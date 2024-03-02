@@ -150,7 +150,7 @@ if __name__ == '__main__':
             path_destination = os.path.join(args.destination, image_data['sequence_id'])
             if not os.path.exists(path_destination):
                 os.makedirs(path_destination)
-            date_time_image_filename = datetime.utcfromtimestamp(int(image_data['captured_at'])/1000).strftime('%Y-%m-%d_%HH%Mmn%Ss%f')[:-3] + '.jpg'
+            date_time_image_filename = datetime.utcfromtimestamp(int(image_data['captured_at'])/1000).strftime('%Y%m%d-%H%M%S:%f')[:-3] + '.jpg'
             path = os.path.join(path_destination, date_time_image_filename)
             img_metadata = writer.PictureMetadata(
                     capture_time = datetime.utcfromtimestamp(int(image_data['captured_at'])/1000),
